@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/SecondPage",
-    "pages/ListPage"
+    "pages/ListPage",
+    "pages/TabsPage"
   ]
 }
