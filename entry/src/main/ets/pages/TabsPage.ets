@@ -1,7 +1,6 @@
 @Entry
 @Component
-struct TabsPage
-{
+struct TabsPage {
   @State message: string = 'Hello World'
 
   controller:TabsController = new TabsController()
@@ -84,6 +83,7 @@ struct TabsPage
       {
         console.info("当前页面"+index)
       })
+
 
       Flex({justifyContent:FlexAlign.SpaceAround})
       {

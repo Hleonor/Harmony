@@ -3,6 +3,9 @@
     "pages/Index",
     "pages/SecondPage",
     "pages/ListPage",
-    "pages/TabsPage"
+    "pages/TabsPage",
+    "pages/MainPage",
+    "pages/HomePage",
+    "pages/BannerDetail"
   ]
 }
