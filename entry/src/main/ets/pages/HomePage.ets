@@ -6,8 +6,7 @@ import { Test } from './Test'
 
 @Entry
 @Component
-export struct HomePage
-{
+export struct HomePage {
   @State message: string = ''
   bannerData = [
     {
