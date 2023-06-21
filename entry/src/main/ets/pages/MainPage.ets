@@ -1,3 +1,4 @@
+import { CanvasPage } from './CanvasPage'
 import { HomePage } from './HomePage'
 import NewsPage from './NewsPage'
 
@@ -39,13 +40,13 @@ struct MainPage
 
       TabContent()
       {
-        Text("这是游戏")
-      }.tabBar("游戏")
+        CanvasPage()
+      }.tabBar("画布")
 
       TabContent()
       {
-        Text("这是壁纸")
-      }.tabBar("壁纸")
+        Text("这是天气")
+      }.tabBar("天气")
     }
     .height(0)
     .layoutWeight(1)
@@ -53,10 +54,6 @@ struct MainPage
     .barWidth(0)
     .barHeight(0)
     .scrollable(false)
-    /*.onChange((index) =>
-    {
-      this.currentIndex = index
-    })*/
   }
 
   @Builder bottomNavi()
@@ -118,14 +115,14 @@ struct MainPage
           Image($r("app.media.gameSelect"))
             .height(20)
             .width(20)
-          Text("游戏")
+          Text("画布")
         }
         else
         {
           Image($r("app.media.game"))
             .height(20)
             .width(20)
-          Text("游戏")
+          Text("画布")
         }
       }
       .onClick(() =>
@@ -142,14 +139,14 @@ struct MainPage
           Image($r("app.media.photoSelect"))
             .height(20)
             .width(20)
-          Text("壁纸")
+          Text("天气")
         }
         else
         {
           Image($r("app.media.photo"))
             .height(20)
             .width(20)
-          Text("壁纸")
+          Text("天气")
         }
       }
       .onClick(() =>
