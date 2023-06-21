@@ -1,6 +1,7 @@
 import { CanvasPage } from './CanvasPage'
 import { HomePage } from './HomePage'
 import NewsPage from './NewsPage'
+import WeatherPage from './WeatherPage'
 
 @Entry
 @Component
@@ -45,7 +46,7 @@ struct MainPage
 
       TabContent()
       {
-        Text("这是天气")
+        WeatherPage()
       }.tabBar("天气")
     }
     .height(0)

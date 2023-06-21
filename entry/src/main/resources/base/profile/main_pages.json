@@ -8,6 +8,7 @@
     "pages/HomePage",
     "pages/BannerDetail",
     "pages/NewsPage",
-    "pages/CanvasPage"
+    "pages/CanvasPage",
+    "pages/WeatherPage"
   ]
 }
