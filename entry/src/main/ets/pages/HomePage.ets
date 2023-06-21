@@ -36,16 +36,24 @@ export struct HomePage {
 
   build()
   {
-    /*Scroll(this.scrollController)
-    {*/
+    Scroll(this.scrollController)
+    {
       Column()
       {
         this.Banner()
         this.NaviContent()
-        this.Content()
-      }.height("100%")
+        this.FlexItem()
+      }
       .padding(10)
-    /*}.scrollable(ScrollDirection.Vertical)  // 滚动方向纵向*/
+    }.height("100%")
+    .scrollable(ScrollDirection.Vertical)
+    /*Column()
+    {
+      this.Banner()
+      this.NaviContent()
+      this.Content()
+    }*//*.height("100%")*//*
+    .padding(10)*/
 
   }
 
@@ -105,42 +113,77 @@ export struct HomePage {
 
   @Builder Content()
   {
-    Grid()
-    {
-      ForEach(this.goodData, (item: GoodModule, index) =>
+      Grid()
       {
-        GridItem()
+        ForEach(this.goodData, (item: GoodModule, index) =>
         {
-          Column()
+          GridItem()
           {
-            // 格子容器
-            Image($r("app.media.cartSelect"))
-              .height(100)
-              .width("100%")
-            Text("商品")
-              .fontSize(14)
-              .margin({ top: 10, bottom: 10 })
-            Row()
+            Column()
             {
-              Text("价格：")
+              // 格子容器
+              Image($r("app.media.cartSelect"))
+                .height(100)
+                .width("100%")
+              Text("商品")
                 .fontSize(14)
+                .margin({ top: 10, bottom: 10 })
+              Row()
+              {
+                Text("价格：")
+                  .fontSize(14)
 
-              Text("$" + item.price)
-                .fontSize(14)
-                .fontColor(Color.Red)
+                Text("$" + item.price)
+                  .fontSize(14)
+                  .fontColor(Color.Red)
+              }
             }
           }
-        }
-        .backgroundColor("#ffefebeb")
-        .padding(10)
+          .backgroundColor("#ffefebeb")
+          .padding(10)
+          .borderRadius(20)
+        })
+      }
+      .columnsTemplate("1fr 1fr")
+      .width("100%")
+      .columnsGap(10)
+      .margin({ top: 10 })
+      .rowsGap(10)
+      .padding(10)
+  }
+
+  @Builder FlexItem()
+  {
+    Flex({wrap:FlexWrap.Wrap})
+    {
+      ForEach(this.goodData, (item, index)=>
+      {
+        Column()
+        {
+          // 格子容器
+          Image(item.image)
+            .height(150)
+            .width(150)
+            .borderRadius(20)
+          Text(item.name)
+            .fontSize(14)
+            .margin({ top: 10, bottom: 10 })
+            .textAlign(TextAlign.Center)
+          Row()
+          {
+            Text("价格：")
+              .fontSize(14)
+
+            Text("￥" + item.price)
+              .fontSize(14)
+              .fontColor(Color.Red)
+          }
+        }.width("40%")
+        .margin({left:"5%", right:"5%",top:20})
+        .backgroundColor("#00eee1e1")
         .borderRadius(20)
+        .padding(5)
       })
     }
-    .columnsTemplate("1fr 1fr")
-    .width("100%")
-    .columnsGap(10)
-    .margin({ top: 10 })
-    .rowsGap(10)
-    .padding(10)
   }
 }

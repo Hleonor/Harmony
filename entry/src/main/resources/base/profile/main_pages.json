@@ -6,6 +6,8 @@
     "pages/TabsPage",
     "pages/MainPage",
     "pages/HomePage",
-    "pages/BannerDetail"
+    "pages/BannerDetail",
+    "pages/NewsPage",
+    "pages/CanvasPage"
   ]
 }

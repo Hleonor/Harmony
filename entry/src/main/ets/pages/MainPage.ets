@@ -1,4 +1,5 @@
 import { HomePage } from './HomePage'
+import NewsPage from './NewsPage'
 
 @Entry
 @Component
@@ -33,8 +34,8 @@ struct MainPage
 
       TabContent()
       {
-        Text("这是视频")
-      }.tabBar("视频")
+        NewsPage()
+      }.tabBar("新闻")
 
       TabContent()
       {
@@ -43,14 +44,15 @@ struct MainPage
 
       TabContent()
       {
-        Text("这是日常用品")
-      }.tabBar("日常用品")
+        Text("这是壁纸")
+      }.tabBar("壁纸")
     }
     .height(0)
     .layoutWeight(1)
     .backgroundColor(Color.White)
     .barWidth(0)
     .barHeight(0)
+    .scrollable(false)
     /*.onChange((index) =>
     {
       this.currentIndex = index
@@ -92,14 +94,14 @@ struct MainPage
           Image($r("app.media.videoSelect"))
             .height(20)
             .width(20)
-          Text("视频")
+          Text("新闻")
         }
         else
         {
           Image($r("app.media.video"))
             .height(20)
             .width(20)
-          Text("视频")
+          Text("新闻")
         }
       }
       .onClick(() =>
@@ -140,14 +142,14 @@ struct MainPage
           Image($r("app.media.photoSelect"))
             .height(20)
             .width(20)
-          Text("日用品")
+          Text("壁纸")
         }
         else
         {
           Image($r("app.media.photo"))
             .height(20)
             .width(20)
-          Text("日用品")
+          Text("壁纸")
         }
       }
       .onClick(() =>
